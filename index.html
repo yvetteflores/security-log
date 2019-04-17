@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body background="https://paosfitworld-rr.netdna-ssl.com/wp-content/uploads/2014/08/parallax-dark-male.jpg">
+
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+        /*
+ FORMATTING FOR CODEPEN
+*/
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            i text-decoration: underline;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .col {
+            height: 100%;
+        }
+
+        div[class*=container] {
+            text-align: center;
+            width: 100%;
+            height: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-1 {
+            background: transparent
+        }
+
+        .container-2 {
+            background: transparent
+        }
+
+
+        /*
+ BUTTON STYLING
+*/
+
+        .btn {
+            position: relative;
+            color: white;
+            width: 256px;
+            height: 64px;
+            line-height: 64px;
+            transition: all 0.3s;
+
+            span {
+                transition: all 0.3s;
+                tranform: scale(1, 1);
+            }
+        }
+
+        .btn::before,
+        .btn::after {
+            content: '';
+            position: absolute;
+            transition: all 0.3s;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+
+
+        /* BTN TWO */
+        .btn-two::before,
+        .btn-two::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-two:hover::after {
+            animation-name: rotatecw;
+            animation-duration: 2s;
+        }
+
+        .btn-two:hover::before {
+            animation-name: rotateccw;
+            animation-duration: 3s;
+        }
+
+        .btn-two:hover::after,
+        .btn-two:hover::before {
+            left: 96px;
+            width: 64px;
+
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes rotatecw {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateccw {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+
+
+    <body oncontextmenu="return false;">
+
+        <div class="col">
+            <div class="container-1">
+                <div class="btn btn-one">
+                </div>
+            </div>
+
+            <div class="container-2">
+                <div class="btn btn-two">
+
+                    <form>
+                        <label for="pswd">Enter My security password: </label>
+                        <input type="password" id="pswd">
+                        <input type="button" value="Submit" onclick="checkPswd();" onkeypress="checkPswd();" />
+                    </form>
+                    <p style="color:red">
+                        To enter my secutiy password please read my resume TAKE NOTE : you cant inspect this site to see
+                        my password
+                        TAKE NOTE : DONT PRESS ENTER , USE CLICK ON SUBMIT</p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script type="text/javascript">
+
+
+            function checkPswd() {
+                var confirmPassword = "hireme";
+                var password = document.getElementById("pswd").value;
+                if (password == confirmPassword) {
+                    window.location.assign("https://www.example.com");
+                }
+                else {
+                    alert("Passwords do not match.");
+                }
+            }
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                    return false;
+                }
+                if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                    return false;
+                }
+            }
+
+            const input = document.querySelector('#myInput');
+            input.addEventListener('keyup', function (e) {
+                if (e.keyCode === 13) {
+                    alert('hi');
+                }
+            });
+
+        </script>
+
+
+
+
+
+
+    </body>
+
+</html>
