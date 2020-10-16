@@ -29,7 +29,7 @@ img.cover {
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear;
 }
-
+ 
 .snip1526 li {
   display: inline-block;
   list-style: outside none none;
